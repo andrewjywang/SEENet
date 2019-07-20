@@ -108,6 +108,7 @@ venv.bak/
 
 data/
 pretrained/
+paper/
 
 *.DS_Store
 

@@ -28,6 +28,9 @@ The predicted samples can be seen in `./samples` folder. The detailed arguments 
 
 The test predicted samples can be seen in `./samples/test` folder
 
+## Framework
+![framework](https://www.dropbox.com/s/rbaqbe2gy1pdzyq/framework0.pdf?raw=1)
+
 ## Cite
 If you use this code or reference our paper in your work please cite this publication as:
 ```

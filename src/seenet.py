@@ -355,7 +355,7 @@ class SEENET(object):
         prefix = time.strftime("%Y_%d_%m_%H_%M_%S", time.localtime())
         summary_dir = self.log_dir + prefix + '/'
         writer = tf.summary.FileWriter(summary_dir, self.sess.graph)
-        params = ("KTH_MCNET"
+        params = ("SEENET"
                   + "_lr_c=" + str(self.lr_c)
                   + "_lr_m=" + str(self.lr_m)
                   + "_margin=" + str(self.margin)
