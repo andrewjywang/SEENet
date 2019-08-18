@@ -248,7 +248,6 @@ class SEENET(object):
         loss2_sim, sim2_dis = self.contrastive_loss(batch2_real_c_l, batch2_real_c_r, 1, self.margin)
         loss1_diff, diff1_dis = self.contrastive_loss(batch1_real_c_l, batch2_real_c_r, self.same, self.margin)
         loss2_diff, diss2_dis = self.contrastive_loss(batch2_real_c_l, batch1_real_c_r, self.same, self.margin)
-
         sim_loss = loss1_sim + loss2_sim
         diff_loss = loss1_diff + loss2_diff
         return [sim_loss, diff_loss], sim1_dis, diff1_dis
@@ -370,9 +369,10 @@ class SEENET(object):
         self.sess.run(init_all)
         if self.train_feature:
             saver = tf.train.Saver(var_list=self.motion_vars + self.content_vars, max_to_keep=100)
+            # saver.restore(self.sess, self.model_dir + 'SEENET_mc_new-6')
         else:
             saver0 = tf.train.Saver(var_list=self.motion_vars + self.content_vars, max_to_keep=100)
-            saver0.restore(self.sess, self.model_dir + 'SEENET_mc-20')
+            saver0.restore(self.sess, self.model_dir + 'SEENET_mc_new-6')
             saver = tf.train.Saver(var_list=self.all_vars, max_to_keep=100)
 
         # Training epoch loop
@@ -394,7 +394,7 @@ class SEENET(object):
                             'is_train:0': True
                         })
                         writer.add_summary(fetched[-1], step * 1 + j)
-                    for k in range(1):
+                    for k in range(3):
                         fetches = [self.loss_m, self.optimizer_m, self.summary_op_m]
                         fetched = self.sess.run(fetches, feed_dict={
                             'video_inputs:0': video_batch,
@@ -431,10 +431,10 @@ class SEENET(object):
                     writer.add_summary(fetched[-1], step)
 
             if self.train_feature:
-                saver.save(self.sess, self.model_dir + 'SEENET_mc', global_step=epoch)
+                saver.save(self.sess, self.model_dir + 'SEENET_mc_new', global_step=epoch)
             else:
-                saver.save(self.sess, self.model_dir + 'SEENET_all', global_step=epoch)
-                self.test_p(test_loader, epoch)
+                saver.save(self.sess, self.model_dir + 'SEENET_all_new', global_step=epoch)
+                # self.test_p(test_loader, epoch)
 
     def test_p(self, loader, epoch):
         for num in range(10):
@@ -465,7 +465,8 @@ class SEENET(object):
 
     def test_all(self, loader):
         saver = tf.train.Saver(var_list=self.all_vars)
-        saver.restore(self.sess, '../pretrained/SEENET_all-25')
+        saver.restore(self.sess, self.model_dir + 'SEENET_all_new-5')
+        loader.shuffle_index_list()
         for num in range(50):
             video_batch, flow_batch, _same = loader.get_batch()
             fetches_p = [self.pred_batch1, self.pred_batch2]
@@ -474,7 +475,7 @@ class SEENET(object):
                 'flow_inputs:0': flow_batch,
                 'is_train:0': False
             })
-            folder_path = '../samples/test/' + str(num)
+            folder_path = '../samples/' + str(num)
             folder = os.path.exists(folder_path)
             if not folder:
                 os.makedirs(folder_path)

@@ -15,9 +15,9 @@ class Args:
         self.parser.add_argument('--pred_num', default=20, type=int, help="predict frame number")
         self.parser.add_argument('--num_layers', default=2, type=int, help="number of LSTM layers")
         self.parser.add_argument('--hidden_size', default=64, type=int, help="LSTM cell hidden size ")
-        self.parser.add_argument('--log_dir', default='../logs/SEENET-KTH/', type=str, help="log save location")
-        self.parser.add_argument('--pretrain_dir', default='../models/SEENET-KTH/', type=str, help="model save location")
-        self.parser.add_argument('--sample_dir', default='../samples/SEENET-KTH/', type=str,
+        self.parser.add_argument('--log_dir', default='./log/SEENET-KTH/', type=str, help="log save location")
+        self.parser.add_argument('--pretrain_dir', default='./models/SEENET-KTH/NEW/', type=str, help="model save location")
+        self.parser.add_argument('--sample_dir', default='./samples/SEENET-KTH/', type=str,
                                  help="sample save location")
         self.parser.add_argument('--train_real_data_dir', default='../data/KTH', type=str,
                                  help="trainning real data location")
@@ -36,12 +36,12 @@ class Args:
         self.parser.add_argument('--gamma', default=1.0, type=float, help='gamma')
         self.parser.add_argument('--delta', default=1.0, type=float, help='delta')
         self.parser.add_argument('--phi', default=1.0, type=float, help='phi')
-        self.parser.add_argument('--chi', default=0.001, type=float, help='chi')
+        self.parser.add_argument('--chi', default=0.0001, type=float, help='chi')
         self.parser.add_argument('--margin', default=1.0, type=float, help='contrastive loss margin')
         self.parser.add_argument('--real_label', default=0.9, type=float, help='real label')
         self.parser.add_argument('--fake_label', default=0.1, type=float, help='fake label')
         self.parser.add_argument('--train_feature', default=False, type=bool, help='train feature or not')
-        self.parser.add_argument('--test', default=False, type=bool, help='train feature or not')
+        self.parser.add_argument('--test', default=True, type=bool, help='train feature or not')
 
     def parse(self):
         args = self.parser.parse_args()
