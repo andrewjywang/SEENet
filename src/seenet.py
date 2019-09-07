@@ -479,13 +479,13 @@ class SEENET(object):
             folder = os.path.exists(folder_path)
             if not folder:
                 os.makedirs(folder_path)
-            _input_batch1 = np.split(video_batch[0, 0:self.video_length - self.pred_num, :, :, :],
-                                     self.video_length - self.pred_num, 0)
-            _input_batch2 = np.split(video_batch[1, 0:self.video_length - self.pred_num, :, :, :],
-                                     self.video_length - self.pred_num, 0)
+            _input_batch1 = np.split(video_batch[0, 0:self.video_length, :, :, :],
+                                     self.video_length, 0)
+            _input_batch2 = np.split(video_batch[1, 0:self.video_length, :, :, :],
+                                     self.video_length, 0)
             _output_batch1 = np.split(fetched_p[0], self.pred_num, 0)
             _output_batch2 = np.split(fetched_p[1], self.pred_num, 0)
-            for j in range(self.video_length - self.pred_num):
+            for j in range(self.video_length):
                 self.save_image(j, _input_batch1[j], folder_path, 'input_batch1_')
                 self.save_image(j, _input_batch2[j], folder_path, 'input_batch2_')
             for i in range(self.pred_num):

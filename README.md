@@ -1,6 +1,7 @@
 # SEE-Net
-The Tensorflow implementation of "Order Matters: Shuffling Sequence
-Generation for Video Prediction" (BMVC2019) by Junyan Wang, Bingzhang Hu, Yang Long, Yu Guan.
+The Tensorflow implementation of "[Order Matters: Shuffling Sequence
+Generation for Video Prediction](https://arxiv.org/pdf/1907.08845.pdf)" (BMVC2019) by Junyan Wang, Bingzhang Hu, Yang Long, Yu Guan.
+
 
 ## Python packages
 * Python: 3.6.8
@@ -8,7 +9,7 @@ Generation for Video Prediction" (BMVC2019) by Junyan Wang, Bingzhang Hu, Yang L
 * CUDA 9.0
 
 ## Dataset & Pretrained Models
-Make a directory `./data` for saving models and a directory `./pretrained` for saving logs.
+Make a directory `./data` for saving models and a directory `./pretrained` for pretrained models.
 * The pretrained SEENet Model can be downloaded from https://www.dropbox.com/sh/m4jrus3x7cjyh9t/AADxVp06scNlQDWLsVTHXHD1a?dl=0
 * The preprocessed KTH dataset can be downloaded from https://www.dropbox.com/sh/5wv2m9ov0usnikj/AAC6Fo3HMPIlXLho6pZKmNtUa?dl=0
 
@@ -29,8 +30,14 @@ The predicted samples can be seen in `./samples` folder. The detailed arguments 
 
 The test predicted samples can be seen in `./samples/test` folder
 
+## Examples
+
+![KTHexamples](https://i.postimg.cc/G90WmFtS/all.png)
+
 ## Cite
 If you use this code or reference our paper in your work please cite this publication as:
+
+ArXiv Version:
 ```
 @misc{wang2019order,
     title={Order Matters: Shuffling Sequence Generation for Video Prediction},
@@ -42,4 +49,6 @@ If you use this code or reference our paper in your work please cite this public
 }
 ```
 
+BMVC Version:
+(Available soon)
 

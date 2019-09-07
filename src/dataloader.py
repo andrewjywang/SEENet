@@ -156,16 +156,6 @@ class DataLoader(object):
     def get_batch_num(self):
         return len(self.flow_items) // self.batch_size
 
-    def check(self):
-        for action in self.real_dataset:
-            for person in self.real_dataset[action]:
-                for scenario in self.real_dataset[action][person]:
-                    for clip in self.real_dataset[action][person][scenario]:
-                        if clip not in self.flow_dataset[action][person][scenario]:
-                            print(str(action) + '_' + str(person) + '_' + str(scenario) + '_' + str(clip))
-                        if len(self.real_dataset[action][person][scenario][clip]) - 1 != len(
-                                self.flow_dataset[action][person][scenario][clip]):
-                            print(str(action) + '_' + str(person) + '_' + str(scenario) + '_' + str(clip))
 
 
 

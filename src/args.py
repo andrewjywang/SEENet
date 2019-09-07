@@ -16,7 +16,7 @@ class Args:
         self.parser.add_argument('--num_layers', default=2, type=int, help="number of LSTM layers")
         self.parser.add_argument('--hidden_size', default=64, type=int, help="LSTM cell hidden size ")
         self.parser.add_argument('--log_dir', default='./log/SEENET-KTH/', type=str, help="log save location")
-        self.parser.add_argument('--pretrain_dir', default='./models/SEENET-KTH/NEW/', type=str, help="model save location")
+        self.parser.add_argument('--pretrain_dir', default='../pretrained/', type=str, help="model save location")
         self.parser.add_argument('--sample_dir', default='./samples/SEENET-KTH/', type=str,
                                  help="sample save location")
         self.parser.add_argument('--train_real_data_dir', default='../data/KTH', type=str,
