@@ -1,6 +1,6 @@
 # SEE-Net
 The Tensorflow implementation of "[Order Matters: Shuffling Sequence
-Generation for Video Prediction](https://arxiv.org/pdf/1907.08845.pdf)" (BMVC2019) by Junyan Wang, Bingzhang Hu, Yang Long, Yu Guan.
+Generation for Video Prediction](https://bmvc2019.org/wp-content/uploads/papers/1023-paper.pdf)" (BMVC2019) by Junyan Wang, Bingzhang Hu, Yang Long, Yu Guan.
 
 
 ## Python packages
@@ -39,16 +39,14 @@ If you use this code or reference our paper in your work please cite this public
 
 ArXiv Version:
 ```
-@misc{wang2019order,
-    title={Order Matters: Shuffling Sequence Generation for Video Prediction},
-    author={Junyan Wang and Bingzhang Hu and Yang Long and Yu Guan},
-    year={2019},
-    eprint={1907.08845},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
+@article{wang2019order,
+  title={Order Matters: Shuffling Sequence Generation for Video Prediction},
+  author={Wang, Junyan and Hu, Bingzhang and Long, Yang and Guan, Yu},
+  journal={arXiv preprint arXiv:1907.08845},
+  year={2019}
 }
 ```
 
-BMVC Version:
-(Available soon)
+## Poster
+
 
