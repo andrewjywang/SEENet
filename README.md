@@ -47,8 +47,9 @@ ArXiv Version:
 }
 ```
 
-```
+
 BMVC Version:
+```
 @inproceedings{wang2019order,
     author    = {Junyan Wang and
                Bingzhang Hu and
