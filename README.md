@@ -47,6 +47,18 @@ ArXiv Version:
 }
 ```
 
+```
+BMVC Version:
+@inproceedings{wang2019order,
+    author    = {Junyan Wang and
+               Bingzhang Hu and
+               Yang Long and
+               Yu Guan},
+    title     = {Order Matters: Shuffling Sequence Generation for Video Prediction},
+    booktitle = {Proc. BMVA British Mach. Vis. Conf.},
+    pages     = {275.1--275.14},
+    year      = {2019}}
+```
 ## Poster
 
 
